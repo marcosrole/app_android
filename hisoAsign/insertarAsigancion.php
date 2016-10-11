@@ -19,7 +19,7 @@
 			$id_suc = isset($_GET['id_suc']) ? $_GET['id_suc'] : $flag;
 
 			if($id_dis!=$flag && $coordLat!=$flag && $coordLon!=$flag && $id_suc!=$flag){
-				$query = "INSERT INTO histoasignacion(fechaAlta, fechaModif, fechaBaja, coordLat, coordLon, observacion, id_dis, id_suc) VALUES ('$fechaHOY','','1900-01-01','$coordLat','$coordLon','Nueva asigancion realizada','$id_dis','$id_suc')";				
+				$query = "INSERT INTO histoasignacion(fechaAlta, fechaModif, fechaBaja, coordLat, coordLon, observacion, id_dis, id_suc) VALUES ('$fechaHOY',null,'1900-01-01','$coordLat','$coordLon','Nueva asigancion realizada','$id_dis','$id_suc')";				
 				$queryDispositivo = "UPDATE dispositivo SET disponible='0' WHERE id='$id_dis' ";
 			}else{
 

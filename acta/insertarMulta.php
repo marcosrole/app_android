@@ -13,14 +13,16 @@
 			 date_default_timezone_set('America/Buenos_Aires');
 			$flag=-1;
 			$fechaHOY = date("Y-m-d H:i:s");
+			
 			$id_ins = isset($_GET['id_ins']) ? $_GET['id_ins'] : $flag;
 			$id_suc = isset($_GET['id_suc']) ? $_GET['id_suc'] : $flag;
 			$id_ala = isset($_GET['id_ala']) ? $_GET['id_ala'] : $flag;
+			$id_dis = isset($_GET['id_dis']) ? $_GET['id_dis'] : $flag;
 			$observacion = isset($_GET['observacion']) ? $_GET['observacion'] : $flag;
 
-
-			if($id_ins!=$flag && $id_suc!=$flag && $id_ala!=$flag){
-				$query = "INSERT INTO acta(observacion, fechahs, id_ins, id_suc, id_ala) VALUES ('$observacion','$fechaHOY','$id_ins','$id_suc','$id_ala')";				
+						
+			if($id_ins!=$flag && $id_suc!=$flag && $id_ala!=$flag && $id_dis!=$flag){
+				$query = "INSERT INTO acta(observacion, fechahs, id_ins, id_suc, id_ala, id_dis) VALUES ('$observacion','$fechaHOY','$id_ins','$id_suc','$id_ala','$id_dis')";				
 			}else{
 
 			}		

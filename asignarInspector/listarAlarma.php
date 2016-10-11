@@ -18,7 +18,7 @@
 			if($id_ins!=$flag){
 
 				$FROM = "FROM asignarinspector as AI INNER JOIN alarma as A ON AI.id_ala=A.id INNER JOIN tipoalarma as TA ON TA.id=A.id_tipAla INNER JOIN dispositivo as D ON A.id_dis=D.id INNER JOIN histoasignacion as HA ON D.id=HA.id_dis INNER JOIN sucursal as S ON HA.id_suc=S.id INNER JOIN empresa as E on E.cuit=S.cuit_emp INNER JOIN direccion as DIR ON DIR.id=S.id_dir "					
-					. "WHERE AI.id_ins='$id_ins' and AI.finalizado=0";
+					. "WHERE AI.id_ins='$id_ins' and AI.finalizado=0 and HA.fechaBaja='1900-01-01'";
 
 				$query = "SELECT AI.id as id_AsignarInspector , A.id_dis, AI.id_ins, AI.observacion, A.fechahs as hs, A.fechahs as fecha, TA.descripcion, S.nombre as sucursal, E.razonsocial as empresa, CONCAT_ws(' ',DIR.calle,DIR.altura, DIR.piso, DIR.depto) AS direccion " . $FROM;
 
